@@ -28,16 +28,16 @@ let operator = ''
 
     function operate(num1, num2, operator){
         switch(operator){
-            case 'add':
+            case '+':
                 return add(num1, num2)
-            case 'subtract':
+            case '-':
                 return subtract(num1, num2)
             default:
                 return 'error'
         }
     }
 
-    console.log(operate(3,3,'subtract'))
+    // console.log(operate(3,3,'-'))
 
 
     //TD = operators. TH = numbers.
@@ -76,18 +76,28 @@ let operator = ''
            }
         } 
         if(event.target.localName === 'td'){
-            operator = event.target.innerHTML
-        }
+           
 
-        if(event.target.innerHTML === 'C'){
-            num1 = '';
-            num2 = '';
-            operator = '';
-        }
+            if(event.target.innerHTML === 'C'){
+                num1 = '';
+                num2 = '';
+                operator = '';
+            }
 
+            else if(event.target.innerHTML === '='){
+                console.log(num1, num2, operator)
+                console.log(operate(Number(num1), Number(num2), operator))
+                num1 = operate(Number(num1), Number(num2), operator)
+                num2 = ''
+                operator = ''
+                
+            }
+            else{
+                operator = event.target.innerHTML
+                console.log(operator)
+            }
+        }
         calcOutput.innerHTML = num1 + operator + num2;
-
-       
-            
+             
     })
     
