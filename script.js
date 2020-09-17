@@ -52,18 +52,25 @@ let operator = ''
         // console.log(event)
         if(event.target.localName === 'th'){
             
-            //if no operator, store in num1, else:
+          //if no operator, start building num 1
            if(!operator){
+            
+                //if no num1, set event target as first digit of num1
                 if(!num1){
                     num1 = event.target.innerHTML
                 } else {
+
+                    //if num1 exists, set second digit after first digit
                     num1 = (num1 + event.target.innerHTML)
                 }
            }
            else{
+         //if there IS an operator, start num2
                if(!num2){
+                   //if no num2, set event target as first digit of num2
                    num2 = event.target.innerHTML
                } else {
+                   //if num2 exists, set second digit after first digit
                    num2 = (num2 + event.target.innerHTML)
                }
            }
@@ -72,6 +79,15 @@ let operator = ''
             operator = event.target.innerHTML
         }
 
-         calcOutput.innerHTML = num1 + operator + num2;
+        if(event.target.innerHTML === 'C'){
+            num1 = '';
+            num2 = '';
+            operator = '';
+        }
+
+        calcOutput.innerHTML = num1 + operator + num2;
+
+       
+            
     })
     
