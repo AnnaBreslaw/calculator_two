@@ -32,6 +32,10 @@ let operator = ''
                 return add(num1, num2)
             case '-':
                 return subtract(num1, num2)
+            case 'x':
+                return multiply(num1, num2)
+            case '/':
+                return divide(num1, num2)
             default:
                 return 'error'
         }
@@ -85,16 +89,22 @@ let operator = ''
             }
 
             else if(event.target.innerHTML === '='){
-                console.log(num1, num2, operator)
-                console.log(operate(Number(num1), Number(num2), operator))
+           
                 num1 = operate(Number(num1), Number(num2), operator)
                 num2 = ''
                 operator = ''
                 
             }
             else{
-                operator = event.target.innerHTML
-                console.log(operator)
+                if(!num2){
+                    operator = event.target.innerHTML
+                 
+                    }
+                else {
+                    num1 = operate(Number(num1), Number(num2), operator)
+                    operator = event.target.innerHTML
+                    num2 = ''
+                }
             }
         }
         calcOutput.innerHTML = num1 + operator + num2;

@@ -1,7 +1,7 @@
 body {
     font-family: 'futura';
-    padding: 15rem;
-  
+    padding: 5rem
+    
   }
   
     td, th {
@@ -19,4 +19,9 @@ body {
     background-color: aquamarine;
     border-radius: 15px;
     font-size: 3rem
+}
+
+#calculator {
+  border: 2px solid grey;
+
 }
