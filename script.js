@@ -89,11 +89,14 @@ let operator = ''
             }
 
             else if(event.target.innerHTML === '='){
-           
-                num1 = operate(Number(num1), Number(num2), operator)
-                num2 = ''
-                operator = ''
-                
+                if(num2 !== '0'){
+                    num1 = operate(Number(num1), Number(num2), operator)
+                    num2 = ''
+                    operator = ''
+                }
+                else {
+                    window.alert("Stop playing yourself.")
+                }
             }
             else{
                 if(!num2){
@@ -101,9 +104,14 @@ let operator = ''
                  
                     }
                 else {
-                    num1 = operate(Number(num1), Number(num2), operator)
-                    operator = event.target.innerHTML
-                    num2 = ''
+                    if(num2 !== '0'){
+                        num1 = operate(Number(num1), Number(num2), operator)
+                        operator = event.target.innerHTML
+                        num2 = ''
+                    }
+                    else {
+                        window.alert('Stop playing yourself.')
+                    }
                 }
             }
         }
