@@ -14,14 +14,20 @@ body {
       }
 
 #calc-output {
-    width: 22rem;
+    
+    width: 22rem; 
     height: 6rem;
     background-color: aquamarine;
     border-radius: 15px;
-    font-size: 3rem
+    font-size: 3rem;
+    /* flex: 22rem; */
+    overflow: hidden
 }
 
 #calculator {
   border: 2px solid grey;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
 
 }

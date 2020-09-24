@@ -96,14 +96,18 @@ let operator = ''
                 }
                 else {
                     window.alert("Stop playing yourself.")
+
+                    //fix this to not apply to all operators! just divide.
                 }
             }
-            else{
+            else {
                 if(!num2){
                     operator = event.target.innerHTML
                  
                     }
                 else {
+                    //deal with if
+
                     if(num2 !== '0'){
                         num1 = operate(Number(num1), Number(num2), operator)
                         operator = event.target.innerHTML
@@ -115,7 +119,12 @@ let operator = ''
                 }
             }
         }
-        calcOutput.innerHTML = num1 + operator + num2;
-             
+        console.log(typeof(num1))
+        if (Number.isInteger(Number(num1))){
+            calcOutput.innerHTML = num1 + operator + num2;
+        } 
+        else {
+            calcOutput.innerHTML = Number(num1).toPrecision(5) + operator + num2;
+        }
     })
     
