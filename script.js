@@ -89,16 +89,17 @@ let operator = ''
             }
 
             else if(event.target.innerHTML === '='){
-                if(num2 !== '0'){
+
+                if(num2 === '0' && operator === '/'){
+                    window.alert("Stop playing yourself.")
+                }
+                else {
                     num1 = operate(Number(num1), Number(num2), operator)
                     num2 = ''
                     operator = ''
                 }
-                else {
-                    window.alert("Stop playing yourself.")
 
-                    //fix this to not apply to all operators! just divide.
-                }
+
             }
             else {
                 if(!num2){
@@ -106,16 +107,15 @@ let operator = ''
                  
                     }
                 else {
-                    //deal with if
-
-                    if(num2 !== '0'){
+                    if(num2 === '0' && operator === '/'){
+                        window.alert('Stop playing yourself.')
+                    }
+                    else {
                         num1 = operate(Number(num1), Number(num2), operator)
                         operator = event.target.innerHTML
                         num2 = ''
                     }
-                    else {
-                        window.alert('Stop playing yourself.')
-                    }
+
                 }
             }
         }
