@@ -92,6 +92,7 @@ let operator = ''
 
                 if(num2 === '0' && operator === '/'){
                     window.alert("Stop playing yourself.")
+                    num2 = '';
                 }
                 else {
                     num1 = operate(Number(num1), Number(num2), operator)
@@ -109,6 +110,7 @@ let operator = ''
                 else {
                     if(num2 === '0' && operator === '/'){
                         window.alert('Stop playing yourself.')
+                        num2 = '';
                     }
                     else {
                         num1 = operate(Number(num1), Number(num2), operator)
